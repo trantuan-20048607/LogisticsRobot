@@ -3,7 +3,6 @@
 
 #include <map>
 #include <string>
-#include <ArduinoLog.h>
 #include "DisableConstructors.h"
 
 template<typename T>
