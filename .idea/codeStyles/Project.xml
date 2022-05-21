@@ -14,6 +14,7 @@
         <rule entity="ENUMERATOR" visibility="ANY" specifier="ANY" prefix="k" style="PASCAL_CASE" suffix="" />
         <rule entity="GLOBAL_FUNCTION,CLASS_MEMBER_FUNCTION,STRUCT_MEMBER_FUNCTION" visibility="ANY" specifier="ANY" prefix="" style="PASCAL_CASE" suffix="" />
         <rule entity="PARAMETER,LOCAL_VARIABLE" visibility="ANY" specifier="ANY" prefix="" style="SNAKE_CASE" suffix="" />
+        <rule entity="GLOBAL_VARIABLE" visibility="ANY" specifier="ANY" prefix="g" style="PASCAL_CASE" suffix="" />
         <rule entity="GLOBAL_VARIABLE,LOCAL_VARIABLE" visibility="ANY" specifier="CONST" prefix="k" style="PASCAL_CASE" suffix="" />
       </rules>
     </Objective-C-extensions>
@@ -27,6 +28,7 @@
         <rule entity="ENUMERATOR" visibility="ANY" specifier="ANY" prefix="k" style="PASCAL_CASE" suffix="" />
         <rule entity="GLOBAL_FUNCTION,CLASS_MEMBER_FUNCTION,STRUCT_MEMBER_FUNCTION" visibility="ANY" specifier="ANY" prefix="" style="PASCAL_CASE" suffix="" />
         <rule entity="PARAMETER,LOCAL_VARIABLE" visibility="ANY" specifier="ANY" prefix="" style="SNAKE_CASE" suffix="" />
+        <rule entity="GLOBAL_VARIABLE" visibility="ANY" specifier="ANY" prefix="g" style="PASCAL_CASE" suffix="" />
         <rule entity="GLOBAL_VARIABLE,LOCAL_VARIABLE" visibility="ANY" specifier="CONST" prefix="k" style="PASCAL_CASE" suffix="" />
       </rules>
     </Objective-C-extensions>

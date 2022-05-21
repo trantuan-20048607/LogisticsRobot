@@ -1,42 +1,37 @@
-/**
- * @brief Driver of color detector header file.
- * @author trantuan-20048607
- * @date 2022.5.15
- */
-
 #ifndef COLOR_DETECTOR_H_
 #define COLOR_DETECTOR_H_
 
 #include <Adafruit_TCS34725.h>
-#include "LangFeatures.h"
+#include "RegisterFactory.h"
 
 namespace color_detector {
-    constexpr uint8_t kDetectionTimes = 8;  ///< Detection times per round
+    [[maybe_unused]] constexpr auto kTcsIntegrationTime = TCS34725_INTEGRATIONTIME_50MS;
+    [[maybe_unused]] constexpr auto kTcsGain = TCS34725_GAIN_4X;
 
     enum Colors {
-        kNone = 0x0, kRed = 0x1, kGreen = 0x2, kBlue = 0x3, SIZE = 0x4
+        kNone [[maybe_unused]] = 0x0,
+        kRed [[maybe_unused]] = 0x1,
+        kGreen [[maybe_unused]] = 0x2,
+        kBlue [[maybe_unused]] = 0x3,
+        SIZE [[maybe_unused]] = 0x4
     };
 
-    class ColorDetector : SINGLETON {
+    class ColorDetectorBase : NO_COPY {
     public:
-        inline static ColorDetector &Instance() {
-            static auto *_ = new ColorDetector();
-            return *_;
-        }
+        [[maybe_unused]] virtual Colors GetColor() = 0;
 
-        [[maybe_unused]] Colors GetColor();
+    protected:
+        ColorDetectorBase() :
+                adafruit_tcs_34725_(kTcsIntegrationTime, kTcsGain) {}
 
-    private:
-        ColorDetector() :
-                adafruit_tcs_34725_(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_4X),
-                color_list_() {}
-
-        Adafruit_TCS34725 adafruit_tcs_34725_;
-        Colors color_list_[kDetectionTimes];
+        [[maybe_unused]] Adafruit_TCS34725 adafruit_tcs_34725_;
     };
-}
 
-[[maybe_unused]] extern color_detector::ColorDetector &ColorDetector;
+    using Factory [[maybe_unused]] = RegisterFactory<ColorDetectorBase>;
+    template<typename T> using Registry [[maybe_unused]] = Registry<ColorDetectorBase, T>;
+
+    [[maybe_unused]] extern Factory &factory;
+}
 
 using Colors [[maybe_unused]] = color_detector::Colors;
 
