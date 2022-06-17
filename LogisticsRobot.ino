@@ -5,9 +5,7 @@
 #include "RobotArm.h"
 
 constexpr uint32_t kBaudRate = 9600;
-constexpr int kMinDistance = 5;
-
-[[maybe_unused]] car_chassis::CarChassisBase *gCarChassis;
+[[maybe_unused]] constexpr int kMinDistance = 5;
 
 void setup() {
     Serial.begin(kBaudRate);
@@ -17,11 +15,7 @@ void setup() {
         pinMode(car_chassis::kOutsideSensorPin[i], INPUT);
         pinMode(car_chassis::kMedialSensorPin[i], INPUT);
     }
-
-    gCarChassis = car_chassis::factory.Create("");
-    gCarChassis->Initialize();
 }
 
 void loop() {
-    gCarChassis->AvoidObstacle(kMinDistance);
 }

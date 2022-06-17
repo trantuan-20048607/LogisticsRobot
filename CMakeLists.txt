@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13.3)
 
 # Configure Arduino toolchain. Open this file to set up your environment.
 set(CMAKE_TOOLCHAIN_FILE cmake/ArduinoToolchain.cmake)
-set(CMAKE_CXX_STANDARD 17)  # Use C++17 standard
+set(CMAKE_CXX_STANDARD 17)  # Use C++ 17 standard
 
 # ================================================
 #   Custom Settings

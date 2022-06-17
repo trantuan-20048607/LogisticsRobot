@@ -3,7 +3,7 @@
 
 #include <AccelStepper.h>
 #include <MultiStepper.h>
-#include "RegisterFactory.h"
+#include "DisableConstructors.h"
 
 namespace stepper_motor {
     [[maybe_unused]] constexpr uint8_t kEnablePin = 34;
@@ -15,11 +15,6 @@ namespace stepper_motor {
 
         [[maybe_unused]] virtual void Move(double x, double y, double z, double a) = 0;
     };
-
-    using Factory [[maybe_unused]] = RegisterFactory<StepperMotorBase>;
-    template<typename T> using Registry [[maybe_unused]] = Registry<StepperMotorBase, T>;
-
-    [[maybe_unused]] extern Factory &factory;
 }
 
 #endif  // STEPPER_MOTOR_H_
