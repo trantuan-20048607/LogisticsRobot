@@ -18,7 +18,7 @@ namespace stepper_motor {
     public:
         [[maybe_unused]] virtual void Initialize() = 0;
 
-        [[maybe_unused]] virtual void Move(double x, double y, double z, double a) = 0;
+        [[maybe_unused]] static void Move(double x, double y, double z, double a);
 
         [[maybe_unused]] void initMotor();
 

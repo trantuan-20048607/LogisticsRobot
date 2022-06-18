@@ -1,5 +1,6 @@
 #include "CarChassis.h"
 #include "ArduinoLog.h"
+#include "StepperMotor.h"
 
 [[maybe_unused]] void car_chassis::CarChassis::SetMode(int mode) {
     switch (mode) {
@@ -58,30 +59,31 @@
                !(digitalRead(kOutsideSensorPin[1])));
 }
 
-[[maybe_unused]] void car_chassis::CarChassis::Forward(){   //前进
-    move(0.105, -0.104, 0.104, -0.1);
+[[maybe_unused]] void car_chassis::CarChassis::Forward() {   //前进
+
+    stepper_motor::StepperMotorBase::Move(0.105, -0.104, 0.104, -0.1);
 }
 
-[[maybe_unused]] void car_chassis::CarChassis::Backward(){  //后退
-    move(-0.5, 0.5, -0.5, 0.5);
+[[maybe_unused]] void car_chassis::CarChassis::Backward() {  //后退
+    stepper_motor::StepperMotorBase::Move(-0.5, 0.5, -0.5, 0.5);
 }
 
-[[maybe_unused]] void car_chassis::CarChassis::Left(){
-    move(0.24, 0.24, 0.24, 0.24);
+[[maybe_unused]] void car_chassis::CarChassis::Left() {
+    stepper_motor::StepperMotorBase::Move(0.24, 0.24, 0.24, 0.24);
 }
 
-[[maybe_unused]] void car_chassis::CarChassis::PanLeft(float v){
-    move(v, v, -v, -v);
+[[maybe_unused]] void car_chassis::CarChassis::PanLeft(float v) {
+    stepper_motor::StepperMotorBase::Move(v, v, -v, -v);
 }
 
-[[maybe_unused]] void car_chassis::CarChassis::Right(){
-    move(-0.23, -0.23, -0.23, -0.23);
+[[maybe_unused]] void car_chassis::CarChassis::Right() {
+    stepper_motor::StepperMotorBase::Move(-0.23, -0.23, -0.23, -0.23);
 }
 
-[[maybe_unused]] void car_chassis::CarChassis::PanRight(float v){
+[[maybe_unused]] void car_chassis::CarChassis::PanRight(float v) {
     move(-v, -v, v, v);
 }
 
-[[maybe_unused]] void car_chassis::CarChassis::Stop(){
+[[maybe_unused]] void car_chassis::CarChassis::Stop() {
     move(0, 0, 0, 0);
 }
