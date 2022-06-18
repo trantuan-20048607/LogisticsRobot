@@ -81,9 +81,9 @@
 }
 
 [[maybe_unused]] void car_chassis::CarChassis::PanRight(float v) {
-    move(-v, -v, v, v);
+    stepper_motor::StepperMotorBase::Move(-v, -v, v, v);
 }
 
 [[maybe_unused]] void car_chassis::CarChassis::Stop() {
-    move(0, 0, 0, 0);
+    stepper_motor::StepperMotorBase::Move(0, 0, 0, 0);
 }
