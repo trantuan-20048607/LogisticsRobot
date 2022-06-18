@@ -98,6 +98,9 @@ void robot_arm::RobotArmBase::Place(Colors color) {
 void robot_arm::RobotArmBase::Handle(Blocks block) {
     Colors color;
     Grab(block);
-    do { color = ColorDetector.GetColor(); } while (!color);
+    do {
+        // todo color = ColorDetector.GetColor();
+    } while (color != color_detector::Colors::kNone
+             && color != color_detector::Colors::SIZE);
     Place(color);
 }
