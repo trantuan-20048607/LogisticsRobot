@@ -19,9 +19,9 @@ namespace car_chassis {
 
     class [[maybe_unused]] CarChassis : NO_COPY {
     public:
-        [[maybe_unused]] virtual void Initialize() = 0;
+        [[maybe_unused]] void Initialize();
 
-        [[maybe_unused]] virtual void AvoidObstacle(int min_distance) = 0;
+        [[maybe_unused]] void AvoidObstacle(int min_distance);
 
         [[maybe_unused]] void SetMode(int mode);
 

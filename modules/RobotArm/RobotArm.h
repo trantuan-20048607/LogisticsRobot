@@ -19,11 +19,10 @@ namespace robot_arm {
 
     class [[maybe_unused]] RobotArmBase : NO_COPY {
     public:
-        [[maybe_unused]] virtual void Initialize() = 0;
+        [[maybe_unused]]  void Initialize();
 
-        [[maybe_unused]] virtual void Run() = 0;
+        [[maybe_unused]]  void Run();
 
-    private:
         RobotArmBase() :
                 servo_() {}
 

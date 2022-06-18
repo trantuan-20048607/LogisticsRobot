@@ -21,7 +21,7 @@ namespace color_detector {
 
     class ColorDetectorBase : NO_COPY {
     public:
-        [[maybe_unused]] virtual Colors GetColor() = 0;
+        [[maybe_unused]] Colors GetColor;
 
 
         [[maybe_unused]] int* ColorDetection();
@@ -29,7 +29,6 @@ namespace color_detector {
         [[maybe_unused]] int ColorValue();
         [[maybe_unused]] int ModeNum(int a[],int n);
 
-    protected:
         ColorDetectorBase() :
                 adafruit_tcs_34725_(kTcsIntegrationTime, kTcsGain) {}
 
