@@ -22,6 +22,32 @@ namespace car_chassis {
         [[maybe_unused]] virtual void Initialize() = 0;
 
         [[maybe_unused]] virtual void AvoidObstacle(int min_distance) = 0;
+
+        [[maybe_unused]] void SetMode(int mode);
+
+        [[maybe_unused]] long GetDistance(const int *pin);
+
+        [[maybe_unused]] int CrossDetect();
+
+        [[maybe_unused]] void PrintDistance();
+
+        [[maybe_unused]] void PrintGrayValue();
+
+
+        //chassis move model
+        [[maybe_unused]] void Forward();
+
+        [[maybe_unused]] void Backward();
+
+        [[maybe_unused]] void Left();
+
+        [[maybe_unused]] void PanLeft(float v);
+
+        [[maybe_unused]] void Right();
+
+        [[maybe_unused]] void PanRight(float v);
+
+        [[maybe_unused]] void Stop();
     };
 }
 

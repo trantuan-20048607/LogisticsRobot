@@ -3,7 +3,7 @@ set(CMAKE_SYSTEM_NAME Arduino)
 # ================================================
 #   Environment settings
 # ================================================
-set(ARDUINO_SDK_PATH D:/Arduino)  # SDK path, including "hardware" directory
+set(ARDUINO_SDK_PATH "C:/Program Files (x86)/Arduino")  # SDK path, including "hardware" directory
 set(TARGET_BOARD mega)  # Target board
 # Target CPU, REMAIN EMPTY or DELETE it if TARGET_BOARD is:
 #   yun, uno, megaADK, leonardo, leonardoeth, micro, esplora,
