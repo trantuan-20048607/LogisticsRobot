@@ -22,7 +22,7 @@ namespace stepper_motor {
 
         [[maybe_unused]] void initMotor();
 
-        [[maybe_unused]] void stepperMove(long _x, long _y, long _z, long _a);
+        [[maybe_unused]] static void stepperMove(long _x, long _y, long _z, long _a);
 
         [[maybe_unused]] void stepperSet(double _v);
     };
