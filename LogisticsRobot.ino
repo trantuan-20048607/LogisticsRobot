@@ -18,21 +18,5 @@ void setup() {
 }
 
 void loop() {
-    car_chassis::CarChassis myCarChassis;
-    stepper_motor::StepperMotorBase myStepperMotor;
-    color_detector::ColorDetectorBase myColorDetector;
-    robot_arm::RobotArmBase myRobotArm;
-    myCarChassis.Initialize();
-    myStepperMotor.Initialize();
-    myStepperMotor.initMotor();
-    //寻迹
-    while (myCarChassis.GetDistance(car_chassis::kUltrasonicPin)) {
-        myCarChassis.AvoidObstacle(200);
-        myCarChassis.PrintDistance();
-        myCarChassis.PrintGrayValue();
-    }
-    for (auto i = 0; i < 3; ++i) {
-        myRobotArm.Initialize();
-        myColorDetector.ColorValue();
-    }
+
 }

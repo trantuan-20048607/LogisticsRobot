@@ -24,6 +24,7 @@ namespace robot_arm {
 
         [[maybe_unused]]  virtual void Run() = 0;
 
+    private:
         RobotArmBase() :
                 servo_() {}
 

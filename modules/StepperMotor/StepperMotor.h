@@ -16,7 +16,7 @@ namespace stepper_motor {
 
     class [[maybe_unused]] StepperMotorBase : NO_COPY {
     public:
-        [[maybe_unused]] void Initialize();
+        [[maybe_unused]] virtual void Initialize() = 0;
 
         [[maybe_unused]] static void Move(double x, double y, double z, double a);
 
