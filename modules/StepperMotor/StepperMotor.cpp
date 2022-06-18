@@ -1,8 +1,5 @@
 #include "StepperMotor.h"
 #include "Arduino.h"
-#include <MultiStepper.h>
-#include <AccelStepper.h>
-
 
 
 void stepper_motor::StepperMotorBase::Move(double x, double y, double z, double a) {

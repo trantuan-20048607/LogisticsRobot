@@ -50,10 +50,6 @@ int color_detector::ColorDetectorBase::ColorValue(){
     for(int i=0; i<10; i++){
         Color[i] = ColorRecognition();
     }
-
-//   for(int j=0; j<10; j++){
-//   Serial.print(Color[j]);}
-//   Serial.println("|");
     return  ModeNum(Color, 10);
 }
 
