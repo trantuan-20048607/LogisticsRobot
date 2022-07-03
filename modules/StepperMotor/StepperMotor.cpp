@@ -40,7 +40,7 @@ void stepper_motor::StepperMotorBase::stepperMove(long _x, long _y, long _z, lon
 }
 
 void stepper_motor::StepperMotorBase::stepperSet(double _v) {
-    stepper_x.setMaxSpeed(_v);//设置步进电机能达到的最大速度
+    stepper_x.setMaxSpeed(_v);
     stepper_y.setMaxSpeed(_v);
     stepper_z.setMaxSpeed(_v);
     stepper_a.setMaxSpeed(_v);

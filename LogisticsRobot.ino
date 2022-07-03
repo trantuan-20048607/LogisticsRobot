@@ -18,5 +18,17 @@ void setup() {
 }
 
 void loop() {
-
+    car_chassis::CarChassis myCarChassis;
+    stepper_motor::StepperMotorBase myStepperMotor;
+    robot_arm::RobotArmBase myRobotArm;
+    myCarChassis.Initialize();
+    myStepperMotor.Initialize();
+    myStepperMotor.initMotor();
+    while (myCarChassis.GetDistance(car_chassis::kUltrasonicPin)) {
+        myCarChassis.AvoidObstacle(50);
+        myCarChassis.PrintDistance();
+        myCarChassis.PrintGrayValue();
+    }
+    myRobotArm.Initialize();
+    myRobotArm.Run();
 }

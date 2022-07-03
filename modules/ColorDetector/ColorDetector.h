@@ -24,10 +24,10 @@ namespace color_detector {
         [[maybe_unused]] Colors GetColor;
 
 
-        [[maybe_unused]] int* ColorDetection();
-        [[maybe_unused]] int ColorRecognition();
-        [[maybe_unused]] int ColorValue();
-        [[maybe_unused]] int ModeNum(int a[],int n);
+        [[maybe_unused]] static int* ColorDetection();
+        [[maybe_unused]] static int ColorRecognition();
+        [[maybe_unused]] static Colors ColorValue();
+        [[maybe_unused]] static Colors ModeNum(int a[],int n);
 
         ColorDetectorBase() :
                 adafruit_tcs_34725_(kTcsIntegrationTime, kTcsGain) {}

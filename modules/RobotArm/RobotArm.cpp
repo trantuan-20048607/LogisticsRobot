@@ -42,7 +42,7 @@ void robot_arm::RobotArmBase::ServoMove(float v1, float v2, float v3, float v4) 
     for (auto i = 1; i < int(Blocks::SIZE); ++i)
         Handle(static_cast<Blocks>(i));
 }
-
+//抓物料
 void robot_arm::RobotArmBase::Grab(Blocks block) {
     switch (block) {
         case Blocks::kBlockA:
@@ -66,7 +66,7 @@ void robot_arm::RobotArmBase::Grab(Blocks block) {
             break;
     }
 }
-
+//放置各颜色
 void robot_arm::RobotArmBase::Place(Colors color) {
     switch (color) {
         case Colors::kRed:
@@ -94,12 +94,12 @@ void robot_arm::RobotArmBase::Place(Colors color) {
             break;
     }
 }
-
+//抓取
 void robot_arm::RobotArmBase::Handle(Blocks block) {
     Colors color;
     Grab(block);
     do {
-        // todo color = ColorDetector.GetColor();
+        color = color_detector::ColorDetectorBase::ColorValue();
     } while (color != color_detector::Colors::kNone
              && color != color_detector::Colors::SIZE);
     Place(color);
